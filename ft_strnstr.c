@@ -2,7 +2,7 @@ char	*ft_strnstr(char *s1, char *s2, size_t n)
 {
 	if (s2 == '\0')
 		return (s1);
-	while (n-- && strlen(s2) >= n)
+	while (n-- && ft_strlen(s2) >= n)
 	{
 		if (*s2 == *s1)
 			return (s2);
