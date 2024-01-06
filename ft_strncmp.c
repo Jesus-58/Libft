@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:12:43 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 13:52:44 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 23:18:11 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,22 @@
 
 int	ft_strncmp(char *s1, char *s2, size_t n)
 {
-	size_t i;
-	int valor;
+	size_t	value;
+	size_t	i;
 
 	i = 0;
-	valor = 0;
-	while (((*s1 != '\0' || *s2 != '\0')) && i <= n)
+	while ((*s1 != '\0' || *s2 != '\0') && i <= n)
 	{
 		if (*s1 != *s2)
 		{
-			valor = (unsigned char)*s1 - (unsigned char)*s2;
-			break;
+			value = (unsigned char)*s1 - (unsigned char)*s2;
+			break ;
 		}
 		s1++;
 		s2++;
 		i++;
 	}
-	return (valor);
+	return (value);
 }
 /*#include <stdio.h>
 #include <string.h>

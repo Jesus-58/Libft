@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:53:13 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 13:53:45 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 22:23:19 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(char *s, int c)
 {
-	char *ultim;
+	char	*ultim;
 
 	ultim = 0;
 	if (*s == '\0')

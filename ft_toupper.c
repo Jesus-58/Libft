@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:55:31 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 14:25:58 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 22:26:31 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c -= 32);
-	return(c);
+	return (c);
 }

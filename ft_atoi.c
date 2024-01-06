@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:02:49 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 12:05:07 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 22:22:33 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_atoi(char *str)
 {
-	int resultado;
-	int signo;
+	int	resultado;
+	int	signo;
 
 	resultado = 0;
 	signo = 1;
-
 	while (*str == ' ')
 		str++;
-	
 	if (*str == '-')
 	{
 		signo = -1;
@@ -30,15 +28,12 @@ int	ft_atoi(char *str)
 	}
 	else if (*str == '+')
 		str++;
-	
 	while (*str >= '0' && *str <= '9')
 	{
 		resultado = resultado * 10 + (*str - '0');
 		str++;
 	}
-
 	resultado *= signo;
-
 	return (resultado);
 }
 /*#include <stdio.h>

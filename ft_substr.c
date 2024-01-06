@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 18:31:15 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 18:41:29 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 23:30:40 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 char	*ft_substr(char const *s, unsigned int star, size_t len)
 {
-	char *result;
+	char	*result;
 
 	result = (char *)malloc(sizeof(char) * len);
 	if (result = NULL)
 		return (NULL);
 	while (len > 0)
 	{
-		
 		len--;
 	}
+
+	return (result);
 }

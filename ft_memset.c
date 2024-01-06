@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:18:34 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 12:18:57 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 22:24:16 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memset(void *s, int c, size_t n)
 		s = (char *)s + 1;
 		n--;
 	}
-	return s;
+	return (s);
 }
 /*
 #include <stdio.h>

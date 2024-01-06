@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:02:37 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 18:16:00 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/06 23:27:47 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *result;
-	int len;
+	char	*result;
+	int	len;
 
 	len = ft_strlen(s1);
 	result = (char *)malloc(sizeof(char) * (len + 1));
@@ -30,22 +30,22 @@ char	*ft_strdup(const char *s1)
 	return (result);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 
 int main(void) {
 	const char *s = "Hello, world!";
 	char *duplicate = ft_strdup(s);
-	
+
 	if (duplicate == NULL) {
 		printf("Error: Memory allocation failed.\n");
 		return 1;
 	}
-	
+
 	printf("Original string: %s\n", s);
 	printf("Duplicate string: %s\n", duplicate);
-	
+
 	free(duplicate);
-	
+
 	return 0;
-}
+}*/
