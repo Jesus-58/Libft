@@ -6,35 +6,35 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:02:49 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/06 22:22:33 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/10 20:59:06 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	int	resultado;
-	int	signo;
+	int	result;
+	int	sign;
 
-	resultado = 0;
-	signo = 1;
+	result = 0;
+	sign = 1;
 	while (*str == ' ')
 		str++;
 	if (*str == '-')
 	{
-		signo = -1;
+		sign = -1;
 		str++;
 	}
 	else if (*str == '+')
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
-		resultado = resultado * 10 + (*str - '0');
+		result = result * 10 + (*str - '0');
 		str++;
 	}
-	resultado *= signo;
-	return (resultado);
+	result *= sign;
+	return (result);
 }
 /*#include <stdio.h>
 int main() {

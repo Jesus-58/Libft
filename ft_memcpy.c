@@ -6,22 +6,32 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:09:06 by jesumore          #+#    #+#             */
-/*   Updated: 2023/12/26 12:10:32 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/12 20:32:09 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	while (n > 0)
+	char		*char_dst;
+	const char	*char_src;
+
+	char_dst = (char *)dst;
+	char_src = (const char *)src;
+	if (dst && src)
 	{
-		*(char *)dest = *(char *)src;
-		src = (char *)src + 1;
-		dest = (char *)dest + 1;
-		n--;
+		if (char_dst > char_src && char_dst < char_src + n)
+			return (NULL);
+		while (n--)
+		{
+			*char_dst = *char_src;
+			char_src++;
+			char_dst++;
+		}
+		return (dst);
 	}
-	return (dest);
+	return (NULL);
 }
 /*
 #include <stdio.h>

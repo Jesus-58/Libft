@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:38:28 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/09 17:26:33 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/12 18:54:31 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 	size_t	start;
 	size_t	end;
-	char	*s1_copy;
-	char	*set_copy;
-
 
 	if (!s1 || !set)
 		return (NULL);
-
 	start = 0;
-	end = strlen(s1);
-	s1_copy = strdup(s1);
-	set_copy = strdup(set);
-
-	while (s1_copy[start] && strchr(set_copy, s1_copy[start]))
+	end = ft_strlen(s1);
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	
-	while (s1_copy[end - 1] && strchr(set_copy, s1_copy[end - 1]) && (end > start))
+	while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && (end > start))
 		end--;
-
-	if (!(result = (char *)malloc(sizeof(char) * (end - start + 1))))
+	result = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (result == NULL)
 		return (NULL);
-	
-	strlcpy(result, &s1_copy[start], (end - start + 1));
-
-	free(s1_copy);
-	free(set_copy);
+	ft_strlcpy(result, (char *)&s1[start], (end - start + 1));
 	return (result);
 }
-
+/*
 #include <stdio.h>
 #include "libft.h"
 
@@ -60,4 +48,4 @@ int main()
 	free(trimmed);
 	
 	return 0;
-}
+}*/

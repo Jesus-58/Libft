@@ -6,18 +6,18 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 22:18:56 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/06 22:18:58 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/10 21:47:00 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }

@@ -6,15 +6,15 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 13:53:13 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/06 22:23:19 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/11 20:16:07 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char	*ultim;
+	const char	*ultim;
 
 	ultim = 0;
 	if (*s == '\0')
@@ -28,7 +28,7 @@ char	*ft_strrchr(char *s, int c)
 			s++;
 		}
 	}
-	return (ultim);
+	return ((char *)ultim);
 }
 /*#include <stdio.h>
 #include <string.h>

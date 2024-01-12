@@ -6,22 +6,22 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 22:19:18 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/06 22:19:40 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/12 18:46:43 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *s1, char *s2, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (s2 == '\0')
-		return (s1);
-	while (n-- && ft_strlen(s2) >= n)
+	if (needle == NULL)
+		return ((char *)haystack);
+	while (len-- && ft_strlen(needle) >= len)
 	{
-		if (*s2 == *s1)
-			return (s2);
-		s1++;
-		s2++;
+		if (*needle == *haystack)
+			return ((char *)needle);
+		haystack++;
+		needle++;
 	}
 	return (NULL);
 }

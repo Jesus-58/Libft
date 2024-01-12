@@ -1,23 +1,43 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: jesumore <jesumore@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/04 18:20:28 by jesumore          #+#    #+#              #
-#    Updated: 2023/12/11 18:40:08 by jesumore         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+CC = gcc
 
-CFLAGS	= -Wall -Wextra -Werror
-NAME	= libft.a
-SRCS	= libft.h ft_isalnum.c ft_isalpha.c ft_isdigit.c ft_strchr.c ft_strlcat.c /
-		  ft_strncmp.c ft_tolower.c ft_toupper.c ft_strrchr.c 
-OBJS	= $(SRCS:.c=.o)
+# Compiler flags
+CFLAGS = -Wall -Wextra -Werror
 
-.c.o :
-	gcc -c $(CFLAGS) $< -o $@
-.PHONY: clean
-clean :
-	rm -f *.o  $(NAME)
+# Source files
+SRCS = 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c \
+		ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c \
+		ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c \
+		ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_strjoin.c \
+		ft_strtrim.c
+
+# Object files
+OBJS = $(SRCS:.c=.o)
+
+# Library name
+NAME = libft.a
+
+# Build rule
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "Library $(NAME) created"
+
+# Object file rule
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean rule
+clean:
+	@rm -f $(OBJS)
+	@echo "Object files cleaned"
+
+# Clean and remove library rule
+fclean: clean
+	@rm -f $(NAME)
+	@echo "Library $(NAME) removed"
+
+# Rebuild rule
+re: fclean all
+
+.PHONY: all clean fclean re

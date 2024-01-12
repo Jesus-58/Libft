@@ -6,34 +6,36 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:07:16 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/06 23:25:38 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/12 19:07:57 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int a)
+int	ft_isalnum(int c)
 {
-	if ((ft_isalpha(a) == 1) && (ft_isdigit(a) == 1))
+	if ((ft_isalpha(c) == 1) || (ft_isdigit(c) == 1))
 		return (1);
 	return (0);
 }
+/*
+#include <stdio.h>
+#include <ctype.h>
 
-/*#include <stdio.h>
 int main()
 {
 	char c;
 	int result;
 
-	c = '5';
+	c = '0';
 	result = ft_isalnum(c);
 	printf("When %c is passed, return value is %d\n", c, result);
 
-	c = 'Q';
+	c = 'A';
 	result = ft_isalnum(c);
 	printf("When %c is passed, return value is %d\n", c, result);
 
-	c = 'l';
+	c = 'a';
 	result = ft_isalnum(c);
 	printf("When %c is passed, return value is %d\n", c, result);
 

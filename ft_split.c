@@ -6,13 +6,20 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 17:27:39 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/09 17:29:11 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/11 19:37:47 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+/*char	**ft_split(char const *s, char c)
 {
-	
-} 
+	int	i;
+	int	j;
+
+	if (s)
+	{
+		
+	}
+	return (NULL);
+}*/
