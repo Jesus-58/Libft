@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:17:44 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/11 20:12:01 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:11:10 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	lendst;
+	void	*dest;
 
-	lendst = ft_strlen(dst);
-	if (len <= lendst)
+	dest = dst;
+	if ((!dst && !src) || dst == src)
+		return (dst);
+	if (dst > src)
 	{
-		while (len > 0)
-		{
-			*(char *)dst = *(char *)src;
-			src = (char *)src + 1;
-			dst = (char *)dst + 1;
-			len--;
-		}
+		while (len--)
+			((char *)dst)[len] = ((char *)src)[len];
 	}
-	while (lendst > 0)
+	else
 	{
-		*(char *)dst = *(char *)src;
-		src = (char *)src + 1;
-		dst = (char *)dst + 1;
-		lendst--;
+		while (len--)
+			*(char *)dst++ = *(char *)src++;
 	}
-	*(char *)dst = '\0';
-	return (dst);
+	return (dest);
 }
 
 /*

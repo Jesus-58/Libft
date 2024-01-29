@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/29 13:15:41 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/29 13:24:31 by jesumore         ###   ########.fr       */
+/*   Created: 2024/01/29 13:14:24 by jesumore          #+#    #+#             */
+/*   Updated: 2024/01/29 13:14:38 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*substr;
+	char	*str;
 
-	if (!s)
-		return (NULL);
-	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	substr = malloc(sizeof(char) * (len + 1));
-	if (!substr)
-		return (NULL);
-	ft_strlcpy(substr, s + start, len + 1);
-	return (substr);
+	if (n)
+	{
+		str = ft_itoa(n);
+		ft_putstr_fd(str, fd);
+	}
 }

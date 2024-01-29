@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 22:19:18 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/12 18:46:43 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:44:59 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (needle == NULL)
+	size_t	needle_len;
+
+	if (needle == NULL || *needle == '\0')
 		return ((char *)haystack);
-	while (len-- && ft_strlen(needle) >= len)
+	needle_len = ft_strlen(needle);
+	while (*haystack != '\0' && len >= needle_len)
 	{
-		if (*needle == *haystack)
-			return ((char *)needle);
+		if (ft_strncmp(haystack, needle, needle_len) == 0)
+			return ((char *)haystack);
 		haystack++;
-		needle++;
+		len--;
 	}
 	return (NULL);
 }
