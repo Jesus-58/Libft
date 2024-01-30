@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:09:06 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/12 20:32:09 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:58:31 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char		*char_dst;
-	const char	*char_src;
+	void	*dest;
 
-	char_dst = (char *)dst;
-	char_src = (const char *)src;
-	if (dst && src)
-	{
-		if (char_dst > char_src && char_dst < char_src + n)
-			return (NULL);
-		while (n--)
-		{
-			*char_dst = *char_src;
-			char_src++;
-			char_dst++;
-		}
-		return (dst);
-	}
-	return (NULL);
+	dest = dst;
+	if (!dst && !src)
+		return (NULL);
+	while (n--)
+		*(char *)dst++ = *(char *)src++;
+	return (dest);
 }
 /*
 #include <stdio.h>

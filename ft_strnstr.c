@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/06 22:19:18 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/29 19:44:59 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:53:31 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	needle_len;
+	size_t	size;
 
-	if (needle == NULL || *needle == '\0')
+	size = ft_strlen(needle);
+	if (!(*needle))
 		return ((char *)haystack);
-	needle_len = ft_strlen(needle);
-	while (*haystack != '\0' && len >= needle_len)
+	while (*haystack && len >= size)
 	{
-		if (ft_strncmp(haystack, needle, needle_len) == 0)
+		if (*haystack == *needle && ft_strncmp(haystack, needle, size) == 0)
 			return ((char *)haystack);
 		haystack++;
 		len--;
 	}
 	return (NULL);
-}
+}	
 
 /*
 #include <stdio.h>

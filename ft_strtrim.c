@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 13:38:28 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/12 18:54:31 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:30:16 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-	while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && (end > start))
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
 	result = (char *)malloc(sizeof(char) * (end - start + 1));
-	if (result == NULL)
+	if (!result)
 		return (NULL);
-	ft_strlcpy(result, (char *)&s1[start], (end - start + 1));
+	ft_strlcpy(result, &s1[start], (end - start + 1));
 	return (result);
 }
 /*

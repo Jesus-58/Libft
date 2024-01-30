@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 13:14:49 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/29 13:23:48 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:18:57 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (i < len)
 	{
-		str[i] = f(i, str[i]);
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';
-	return (NULL);
+	return (str);
 }

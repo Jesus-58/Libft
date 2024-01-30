@@ -6,7 +6,7 @@
 /*   By: jesumore <jesumore@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 12:02:49 by jesumore          #+#    #+#             */
-/*   Updated: 2024/01/10 20:59:06 by jesumore         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:13:12 by jesumore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 
 	result = 0;
 	sign = 1;
-	while (*str == ' ')
+	while ((*str > 8 && *str < 14) || *str == 32)
 		str++;
 	if (*str == '-')
 	{
@@ -28,7 +28,7 @@ int	ft_atoi(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	while (*str >= '0' && *str <= '9')
+	while (ft_isdigit(*str))
 	{
 		result = result * 10 + (*str - '0');
 		str++;
